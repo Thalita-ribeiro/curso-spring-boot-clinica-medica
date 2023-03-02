@@ -11,7 +11,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import med.voll.api.address.AddressData;
+import med.voll.api.medical.dto.MedicalRegistrationData;
 import med.voll.api.medical.dto.Specialty;
 
 @Entity
@@ -32,4 +32,12 @@ public class Medical {
 
     @Embedded
     private AddressData addressData;
+
+    public Medical(MedicalRegistrationData medicalRegistrationData) {
+        this.name = medicalRegistrationData.name();
+        this.email = medicalRegistrationData.email();
+        this.crm = medicalRegistrationData.crm();
+        this.specialty = medicalRegistrationData.specialty();
+        this.addressData = new AddressData(medicalRegistrationData.addressData());
+    }
 }
