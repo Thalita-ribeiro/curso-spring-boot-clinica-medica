@@ -1,5 +1,7 @@
 package med.voll.api.controller;
 
+import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import med.voll.api.entity.Medical;
 import med.voll.api.medical.dto.MedicalRegistrationData;
 import med.voll.api.repository.MedicalRepository;
@@ -17,7 +19,8 @@ public class MedicalController {
     MedicalRepository medicalRepository;
 
     @PostMapping
-    public void register(@RequestBody MedicalRegistrationData medicalRegistrationData) {
+    @Transactional
+    public void register(@Valid @RequestBody MedicalRegistrationData medicalRegistrationData) {
         medicalRepository.save(new Medical(medicalRegistrationData));
     }
 }
