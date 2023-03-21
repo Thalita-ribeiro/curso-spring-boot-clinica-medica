@@ -11,8 +11,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import med.voll.api.medical.dto.MedicalRegistrationData;
-import med.voll.api.medical.dto.Specialty;
+import med.voll.api.dto.medical.AddressData;
+import med.voll.api.dto.medical.MedicalRegistrationData;
+import med.voll.api.dto.medical.Specialty;
 
 @Entity
 @Getter

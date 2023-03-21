@@ -3,7 +3,7 @@ package med.voll.api.controller;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import med.voll.api.entity.Medical;
-import med.voll.api.medical.dto.MedicalRegistrationData;
+import med.voll.api.dto.medical.MedicalRegistrationData;
 import med.voll.api.repository.MedicalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

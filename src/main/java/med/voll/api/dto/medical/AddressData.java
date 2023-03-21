@@ -1,4 +1,4 @@
-package med.voll.api.entity;
+package med.voll.api.dto.medical;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
