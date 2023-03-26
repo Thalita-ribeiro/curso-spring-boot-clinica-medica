@@ -11,5 +11,6 @@ CREATE TABLE medical (
       state VARCHAR(255) not null,
       complement VARCHAR(255),
       number VARCHAR(10),
+      is_active tinyint,
       primary key(id)
 );
