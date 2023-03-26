@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.dto.medical.AddressData;
+import med.voll.api.dto.medical.Address;
 import med.voll.api.dto.medical.PatientRegistrationData;
 
 @Getter
@@ -23,13 +23,13 @@ public class Patient {
     private String cpf;
 
     @Embedded
-    private AddressData addressData;
+    private Address addressData;
 
     public Patient(PatientRegistrationData patientRegistrationData) {
         this.name = patientRegistrationData.name();
         this.email = patientRegistrationData.email();
         this.telephone = patientRegistrationData.telephone();
         this.cpf = patientRegistrationData.cpf();
-        this.addressData = new AddressData(patientRegistrationData.addressData());
+        this.addressData = new Address(patientRegistrationData.addressData());
     }
 }

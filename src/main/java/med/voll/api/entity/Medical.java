@@ -11,9 +11,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import med.voll.api.dto.medical.AddressData;
+import med.voll.api.dto.medical.Address;
 import med.voll.api.dto.medical.MedicalRegistrationData;
 import med.voll.api.dto.medical.Specialty;
+import med.voll.api.dto.medical.UpdateMedicalData;
 
 @Entity
 @Getter
@@ -28,19 +29,37 @@ public class Medical {
     private String email;
     private String telephone;
     private String crm;
+    private Boolean isActive;
 
     @Enumerated(EnumType.STRING)
     private Specialty specialty;
 
     @Embedded
-    private AddressData addressData;
+    private Address address;
 
     public Medical(MedicalRegistrationData medicalRegistrationData) {
+        this.isActive = true;
         this.name = medicalRegistrationData.name();
         this.email = medicalRegistrationData.email();
         this.telephone = medicalRegistrationData.telephone();
         this.crm = medicalRegistrationData.crm();
         this.specialty = medicalRegistrationData.specialty();
-        this.addressData = new AddressData(medicalRegistrationData.addressData());
+        this.address = new Address(medicalRegistrationData.addressData());
+    }
+
+    public void updateInformation(UpdateMedicalData updateMedicalData) {
+        if (updateMedicalData.name() != null) {
+            this.name = updateMedicalData.name();
+        }
+        if (updateMedicalData.telephone() != null) {
+            this.telephone = updateMedicalData.telephone();
+        }
+        if (updateMedicalData.addressData() != null) {
+            this.address.updateAddressInformation(updateMedicalData.addressData());
+        }
+    }
+
+    public void delete() {
+        this.isActive = false;
     }
 }
