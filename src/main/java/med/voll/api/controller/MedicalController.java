@@ -60,4 +60,11 @@ public class MedicalController {
         medical.delete();
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity medicalRegistrationDetails(@PathVariable Long id) {
+        Medical medical = medicalRepository.getReferenceById(id);
+        return ResponseEntity.ok(new MedicalDetailingData(medical));
+    }
 }
+
