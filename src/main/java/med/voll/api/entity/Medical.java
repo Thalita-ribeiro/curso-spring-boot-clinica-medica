@@ -16,8 +16,6 @@ import med.voll.api.dto.medical.MedicalRegistrationData;
 import med.voll.api.dto.medical.Specialty;
 import med.voll.api.dto.medical.UpdateMedicalData;
 
-import java.util.List;
-
 @Entity
 @Getter
 @NoArgsConstructor
