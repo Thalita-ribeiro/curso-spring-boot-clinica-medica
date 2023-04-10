@@ -3,7 +3,7 @@ package med.voll.api.controller;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import med.voll.api.dto.medical.UpdateMedicalData;
-import med.voll.api.dto.medical.response.MedicalResponse;
+import med.voll.api.dto.response.MedicalResponse;
 import med.voll.api.entity.Medical;
 import med.voll.api.dto.medical.MedicalRegistrationData;
 import med.voll.api.repository.MedicalRepository;

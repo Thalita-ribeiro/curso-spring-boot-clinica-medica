@@ -1,4 +1,4 @@
-package med.voll.api.dto.medical.response;
+package med.voll.api.dto.response;
 
 import med.voll.api.entity.Patient;
 

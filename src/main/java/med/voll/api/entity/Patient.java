@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.dto.medical.Address;
-import med.voll.api.dto.medical.PatientRegistrationData;
+import med.voll.api.dto.patient.PatientRegistrationData;
 
 @Getter
 @NoArgsConstructor
