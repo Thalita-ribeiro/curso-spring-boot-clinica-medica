@@ -1,7 +1,5 @@
-package med.voll.api.controller;
+package med.voll.api.dto.medical;
 
-import med.voll.api.dto.medical.Address;
-import med.voll.api.dto.medical.Specialty;
 import med.voll.api.entity.Medical;
 
 public record MedicalDetailingData(
